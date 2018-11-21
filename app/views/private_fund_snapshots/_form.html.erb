@@ -1,0 +1,122 @@
+<%= form_with(model: private_fund_snapshot, local: true) do |form| %>
+  <% if private_fund_snapshot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(private_fund_snapshot.errors.count, "error") %> prohibited this private_fund_snapshot from being saved:</h2>
+
+      <ul>
+      <% private_fund_snapshot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fund_id %>
+    <%= form.number_field :fund_id, id: :private_fund_snapshot_fund_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :private_fund_snapshot_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nav_updated_at %>
+    <%= form.date_select :nav_updated_at, id: :private_fund_snapshot_nav_updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fund_code %>
+    <%= form.text_field :fund_code, id: :private_fund_snapshot_fund_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_code %>
+    <%= form.number_field :company_code, id: :private_fund_snapshot_company_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name, id: :private_fund_snapshot_company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fund_name %>
+    <%= form.text_field :fund_name, id: :private_fund_snapshot_fund_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :net_asset_value %>
+    <%= form.number_field :net_asset_value, id: :private_fund_snapshot_net_asset_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_change %>
+    <%= form.number_field :price_change, id: :private_fund_snapshot_price_change %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surrender_price %>
+    <%= form.number_field :surrender_price, id: :private_fund_snapshot_surrender_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_net_asset %>
+    <%= form.number_field :total_net_asset, id: :private_fund_snapshot_total_net_asset %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dividend %>
+    <%= form.number_field :dividend, id: :private_fund_snapshot_dividend %>
+  </div>
+
+  <div class="field">
+    <%= form.label :standing %>
+    <%= form.number_field :standing, id: :private_fund_snapshot_standing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :registered_at %>
+    <%= form.date_select :registered_at, id: :private_fund_snapshot_registered_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spare_column %>
+    <%= form.text_field :spare_column, id: :private_fund_snapshot_spare_column %>
+  </div>
+
+  <div class="field">
+    <%= form.label :holiday %>
+    <%= form.check_box :holiday, id: :private_fund_snapshot_holiday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :administration_flag %>
+    <%= form.number_field :administration_flag, id: :private_fund_snapshot_administration_flag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accounting %>
+    <%= form.number_field :accounting, id: :private_fund_snapshot_accounting %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fund_profile_id %>
+    <%= form.number_field :fund_profile_id, id: :private_fund_snapshot_fund_profile_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public_flag %>
+    <%= form.number_field :public_flag, id: :private_fund_snapshot_public_flag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_latest %>
+    <%= form.check_box :is_latest, id: :private_fund_snapshot_is_latest %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

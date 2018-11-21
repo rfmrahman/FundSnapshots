@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fund Snapshots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fund</th>
+      <th>User</th>
+      <th>Nav updated at</th>
+      <th>Fund code</th>
+      <th>Company code</th>
+      <th>Company name</th>
+      <th>Fund name</th>
+      <th>Net asset value</th>
+      <th>Price change</th>
+      <th>Surrender price</th>
+      <th>Total net asset</th>
+      <th>Dividend</th>
+      <th>Standing</th>
+      <th>Registered at</th>
+      <th>Spare column</th>
+      <th>Holiday</th>
+      <th>Administration flag</th>
+      <th>Accounting</th>
+      <th>Fund profile id</th>
+      <th>Public flag</th>
+      <th>Is Latest</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @private_fund_snapshots.each do |private_fund_snapshot| %>
+      <tr>
+        <td><%= private_fund_snapshot.fund_id %></td>
+        <td><%= private_fund_snapshot.user_id %></td>
+        <td><%= private_fund_snapshot.nav_updated_at %></td>
+        <td><%= private_fund_snapshot.fund_code %></td>
+        <td><%= private_fund_snapshot.company_code %></td>
+        <td><%= private_fund_snapshot.company_name %></td>
+        <td><%= private_fund_snapshot.fund_name %></td>
+        <td><%= private_fund_snapshot.net_asset_value %></td>
+        <td><%= private_fund_snapshot.price_change %></td>
+        <td><%= private_fund_snapshot.surrender_price %></td>
+        <td><%= private_fund_snapshot.total_net_asset %></td>
+        <td><%= private_fund_snapshot.dividend %></td>
+        <td><%= private_fund_snapshot.standing %></td>
+        <td><%= private_fund_snapshot.registered_at %></td>
+        <td><%= private_fund_snapshot.spare_column %></td>
+        <td><%= private_fund_snapshot.holiday %></td>
+        <td><%= private_fund_snapshot.administration_flag %></td>
+        <td><%= private_fund_snapshot.accounting %></td>
+        <td><%= private_fund_snapshot.fund_profile_id %></td>
+        <td><%= private_fund_snapshot.public_flag %></td>
+        <td><%= private_fund_snapshot.is_latest %></td>
+        <td><%= link_to 'Show', private_fund_snapshot %></td>
+        <td><%= link_to 'Edit', edit_private_fund_snapshot_path(private_fund_snapshot) %></td>
+        <td><%= link_to 'Destroy', private_fund_snapshot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= form_tag({controller: "private_fund_snapshots", action: "import", method: "post"}, {multipart: true}) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "ファンドデータアップロード" %>
+<% end %>
+<br>
+
+<%= link_to 'New Fund Snapshot', new_private_fund_snapshot_path %>
