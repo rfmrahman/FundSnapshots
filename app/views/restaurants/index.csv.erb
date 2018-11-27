@@ -1,0 +1,5 @@
+<%- headers = ['id', 'restaurant_code', 'restaurant_name', 'description', 'address', 'location', 'phone_number', 'email', 'review_link'] -%>
+<%= CSV.generate_line headers %>
+<%- @restaurants.each do |restaurant| -%>
+<%= CSV.generate_line([restaurant.id, restaurant.restaurant_code, restaurant.restaurant_name, restaurant.description, restaurant.address, restaurant.location, restaurant.phone_number, restaurant.email, restaurant.review_link]) -%>
+<%- end -%>

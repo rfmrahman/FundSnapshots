@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Restaurant code:</strong>
+  <%= @restaurant.restaurant_code %>
+</p>
+
+<p>
+  <strong>Restaurant name:</strong>
+  <%= @restaurant.restaurant_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @restaurant.email %>
+</p>
+
+<p>
+  <strong>Review link:</strong>
+  <%= @restaurant.review_link %>
+  <br>
+  <iframe width="512" height="384"
+      src="https://www.youtube.com/embed/<%= @restaurant.review_link.split('=')[1] %>">
+  </iframe>
+</p>
+
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

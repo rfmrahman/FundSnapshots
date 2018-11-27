@@ -3,4 +3,8 @@ Rails.application.routes.draw do
     resources :private_fund_snapshots do
       collection { post :import }
     end
+
+    resources :restaurants do
+      collection { post :import }
+    end
 end
